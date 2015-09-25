@@ -1,0 +1,10 @@
+{
+  "name": "bookapp",
+  "main": "app.js",
+  "dependencies": {
+    "express": "~4.13.3",
+    "mongoose": "~4.1.8",
+    "body-parser" : "~1.4.2",
+    "method-override" : "~2.0.2" 
+  }
+}
