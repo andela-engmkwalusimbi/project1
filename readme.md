@@ -1,2 +1,2 @@
 # project1
-version control project for todo application
+version control project for book tracking application
