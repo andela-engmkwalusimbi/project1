@@ -13,9 +13,8 @@ router.get('/', function(req, res, next) {
 	// get all Books
 	Book.find(function (err, Books) {
 	    if (err) 
-	    	console.log("get error: " + err);
-	    console.log("get success: " + Books);
-	    return;
+	    	return next(err);
+	    res.json(Books);
 	});
 });
 
@@ -24,9 +23,9 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
   	Book.create(req.body, function (err, post) {
 	    if (err) 
-	    	console.log("post error: " + err);
-	    console.log("post success: " + post);
-	    return;
+	    	return next(err);
+	    res.json(post);
+	    
   	});
 });
 
@@ -35,9 +34,8 @@ router.post('/', function(req, res, next) {
 router.get('/:id', function(req, res, next) {
   	Book.findById(req.params.id, function (err, post) {
 	    if (err) 
-	    	console.log("getId error: " + err);
-	    console.log("getId success: " + post);
-	    return;
+	    	return next(err);
+	    res.json(post));
   	});
 });
 
@@ -45,9 +43,8 @@ router.get('/:id', function(req, res, next) {
 router.delete('/:id', function(req, res, next) {
   	Book.findByIdAndRemove(req.params.id, req.body, function (err, post) {
 	    if (err) 
-	    	console.log("delete error: " + err);
-	    console.log("delete success: " + post);
-	    return;
+	    	return next(err);
+	    res.json(post);
   	});
 });
 
